@@ -1,0 +1,327 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaaf Ahmed — Senior Web Designer & UI/UX Specialist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f6ff',
+                            100: '#e0edff',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#0f172a',
+                            accent: '#6366f1',
+                            purple: '#a855f7',
+                            teal: '#14b8a6',
+                            emerald: '#10b981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Glassmorphism & Effects */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.35);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
+        }
+        .glass-nav {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa 0%, #c084fc 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 50%, #9333ea 100%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white custom-scrollbar overflow-x-hidden">
+
+    <!-- Back to Top Floating Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 p-4 rounded-full gradient-bg text-white shadow-xl opacity-0 pointer-events-none transition-all duration-300 hover:scale-110 active:scale-95" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- Header / Sticky Navigation -->
+    <header class="fixed top-0 left-0 w-full z-40 glass-nav border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-tight font-display flex items-center gap-2 group">
+                <span class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white text-sm font-bold shadow-md shadow-indigo-500/30 group-hover:rotate-12 transition-transform">S</span>
+                <span>SHAAF<span class="text-indigo-500">.</span>AHMED</span>
+            </a>
+            
+            <!-- Desktop Nav Links -->
+    <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-300">
+        <a href="#about" class="hover:text-indigo-400 transition-colors">About</a>
+        <a href="#qualities" class="hover:text-indigo-400 transition-colors">Qualities</a>
+        <a href="#services" class="hover:text-indigo-400 transition-colors">Services</a>
+        <a href="#skills" class="hover:text-indigo-400 transition-colors">Tech Stack</a>
+        <a href="#portfolio" class="hover:text-indigo-400 transition-colors">Portfolio</a>
+        <a href="#process" class="hover:text-indigo-400 transition-colors">Workflow</a>
+        <a href="#pricing" class="hover:text-indigo-400 transition-colors">Pricing</a>
+        <a href="#testimonials" class="hover:text-indigo-400 transition-colors">Reviews</a>
+        <a href="#faq" class="hover:text-indigo-400 transition-colors">FAQ</a>
+    </nav>
+
+    <div class="hidden sm:flex items-center gap-4">
+        <a href="#contact" class="px-6 py-2.5 rounded-full gradient-bg text-white font-bold text-sm hover:shadow-lg hover:shadow-indigo-500/25 transition-all transform hover:-translate-y-0.5">
+            Hire Shaaf
+        </a>
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button id="mobileMenuBtn" class="lg:hidden text-slate-300 hover:text-white text-2xl focus:outline-none" aria-label="Toggle Navigation Menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</div>
+
+<!-- Mobile Dropdown Navigation -->
+<div id="mobileMenu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-6 space-y-4">
+    <a href="#about" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">About</a>
+    <a href="#qualities" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Qualities</a>
+    <a href="#services" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Services</a>
+    <a href="#skills" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Tech Stack</a>
+    <a href="#portfolio" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Portfolio</a>
+    <a href="#process" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Workflow</a>
+    <a href="#pricing" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Pricing Packages</a>
+    <a href="#testimonials" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">Testimonials</a>
+    <a href="#faq" class="mobile-nav-link block text-slate-300 hover:text-indigo-400 text-base font-semibold">FAQ</a>
+    <a href="#contact" class="mobile-nav-link inline-block w-full text-center px-6 py-3 rounded-xl gradient-bg text-white font-bold text-base">
+        Hire Shaaf Ahmed
+    </a>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative pt-36 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden min-h-screen flex items-center">
+        <!-- Ambient Glowing Background Orbs -->
+        <div class="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto text-center space-y-10">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs sm:text-sm font-semibold uppercase tracking-wider backdrop-blur-md">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Available for High-Impact Projects & Global Consulting
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight font-display">
+                Crafting Modern, Human-Centric & <br class="hidden sm:inline">
+                <span class="gradient-text">High-Converting</span> Digital Interfaces
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto font-normal leading-relaxed">
+                I am <strong class="text-slate-100 font-semibold">Shaaf Ahmed</strong> — an expert Web Designer & UI/UX Strategist. I bridge artistic vision with technical architecture to build fast, beautiful, and conversion-focused web solutions.
+            </p>
+
+            <!-- Hero Action Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="#portfolio" class="px-8 py-4 rounded-xl gradient-bg text-white font-bold text-base hover:shadow-2xl hover:shadow-indigo-500/40 transition-all transform hover:-translate-y-1 flex items-center gap-3">
+            <i class="fa-solid fa-layer-group"></i> View Case Studies
+        </a>
+        <a href="https://wa.me/923476524007" target="_blank" class="px-8 py-4 rounded-xl border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-900/40 text-emerald-300 font-bold text-base transition-all flex items-center gap-3 hover:-translate-y-1">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Direct WhatsApp Chat
+        </a>
+        <a href="#pricing" class="px-8 py-4 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-bold text-base transition-all flex items-center gap-2">
+            View Packages <i class="fa-solid fa-tags text-xs"></i>
+        </a>
+    </div>
+
+    <!-- Live Metrics Counter Bar -->
+    <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div class="glass-card p-6 rounded-2xl text-center border border-slate-800">
+            <div class="text-3xl sm:text-4xl font-extrabold text-indigo-400 font-display">150+</div>
+            <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Projects Delivered</div>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-center border border-slate-800">
+            <div class="text-3xl sm:text-4xl font-extrabold text-teal-400 font-display">99.8%</div>
+            <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Client Satisfaction</div>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-center border border-slate-800">
+            <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 font-display">5+ Yrs</div>
+            <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">Industry Expertise</div>
+        </div>
+        <div class="glass-card p-6 rounded-2xl text-center border border-slate-800">
+            <div class="text-3xl sm:text-4xl font-extrabold text-pink-400 font-display">&lt;24ms</div>
+            <div class="text-xs sm:text-sm text-slate-400 mt-1 font-medium">UI Speed Benchmark</div>
+        </div>
+    </div>
+</div>
+</section>
+
+    <!-- Bio & Philosophy Section -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/40 relative border-t border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info Block -->
+            <div class="lg:col-span-6 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                    Design Mindset & Philosophy
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-100 font-display leading-tight">
+                    Where Creativity Meets Digital Strategy
+                </h2>
+                <p class="text-slate-400 text-base leading-relaxed">
+                    A great website isn't just visually appealing—it is an engine for business growth, brand recognition, and seamless user interaction. As a senior web designer, I blend aesthetic perfection with deep psychological design principles.
+                </p>
+                <p class="text-slate-400 text-base leading-relaxed">
+                    Every project I undertake is built with responsive architecture, strict color harmony, WCAG web accessibility, and lightning-fast loading performance.
+                </p>
+
+                <!-- Core Pillars Grid -->
+                <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex items-start gap-3">
+                        <div class="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400">
+                            <i class="fa-solid fa-heart text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm">Empathy-First UX</h4>
+                            <p class="text-xs text-slate-400 mt-1">Understanding user behavior before drawing a single pixel.</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 flex items-start gap-3">
+                        <div class="p-2.5 rounded-lg bg-teal-500/10 text-teal-400">
+                            <i class="fa-solid fa-bullseye text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-200 text-sm">Conversion Focus</h4>
+                            <p class="text-xs text-slate-400 mt-1">Strategic layout structures that turn visitors into loyal clients.</p>
+                        </div>
+                    </div>
+<!-- Technical & Skill Stack Section -->
+<section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-16">
+    <div class="text-center max-w-3xl mx-auto space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+            Comprehensive Toolkit
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-display">
+            Design & Frontend Stack
+        </h2>
+        <p class="text-slate-400 text-base">
+            Mastery across design tools, UI frameworks, and analytical tools.
+        </p>
+    </div>
+
+    <!-- Tech Tool Badge Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="glass-card p-5 rounded-2xl text-center space-y-2 border border-slate-800">
+            <i class="fa-brands fa-figma text-3xl text-purple-400"></i>
+            <div class="font-bold text-slate-200 text-sm">Figma</div>
+            <div class="text-[10px] text-slate-400">UI/UX & Systems</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl text-center space-y-2 border border-slate-800">
+            <i class="fa-solid fa-pen-nib text-3xl text-pink-400"></i>
+            <div class="font-bold text-slate-200 text-sm">Adobe XD</div>
+            <div class="text-[10px] text-slate-400">Interactive Wireframes</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl text-center space-y-2 border border-slate-800">
+            <i class="fa-solid fa-image text-3xl text-blue-400"></i>
+            <div class="font-bold text-slate-200 text-sm">Photoshop</div>
+            <div class="text-[10px] text-slate-400">Visual Editing</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl text-center space-y-2 border border-slate-800">
+            <i class="fa-brands fa-html5 text-3xl text-orange-400"></i>
+            <div class="font-bold text-slate-200 text-sm">HTML5 & CSS3</div>
+            <div class="text-[10px] text-slate-400">Semantic Web Code</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl text-center space-y-2 border border-slate-800">
+            <i class="fa-brands fa-css3-alt text-3xl text-cyan-400"></i>
+            <div class="font-bold text-slate-200 text-sm">Tailwind CSS</div>
+            <div class="text-[10px] text-slate-400">Utility UI Styling</div>
+        </div>
+        <div class="glass-card p-5 rounded-2xl text-center space-y-2 border border-slate-800">
+            <i class="fa-brands fa-wordpress text-3xl text-blue-500"></i>
+            <div class="font-bold text-slate-200 text-sm">Webflow / WP</div>
+            <div class="text-[10px] text-slate-400">CMS Development</div>
+        </div>
+    </div>
+</section>
+
+    <!-- Comprehensive Qualities & Mastery Grid Section -->
+<!-- Transparent Pricing Packages Section -->
+<section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/40 border-t border-b border-slate-800/60">
+    <div class="max-w-7xl mx-auto space-y-16">
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                Flexible Engagement Models
+            </div>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-display">
+                Transparent Pricing Packages
+            </h2>
+            <p class="text-slate-400 text-base">
+                Choose a plan tailored to your business scale. No hidden charges.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Package 1: Starter -->
+            <div class="glass-card p-8 rounded-3xl space-y-6 border border-slate-800 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-bold uppercase">Starter Package</span>
+                    <h3 class="text-2xl font-bold font-display text-slate-100">Landing Page UI</h3>
+                    <p class="text-xs text-slate-400">Ideal for startups & fast product validation launches.</p>
+                    <div class="text-4xl font-extrabold font-display text-indigo-400">$299 <span class="text-xs font-normal text-slate-500">/ project</span></div>
+                    
+                    <ul class="space-y-3 text-xs text-slate-300 pt-4 border-t border-slate-800">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Single High-Converting Landing Page</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Full Mobile & Tablet Responsiveness</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> Figma Source Files & Assets</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> 2 Revision Rounds Included</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-400"></i> 3–5 Business Days Turnaround</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="w-full py-3.5 rounded-xl border border-indigo-500/50 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 font-bold text-center text-sm transition-all">Select Starter Plan</a>
+            </div>
+
+            <!-- Package 2: Professional (Featured) -->
+            <div class="glass-card p-8 rounded-3xl space-y-6 border-2 border-indigo-500 relative flex flex-col justify-between shadow-2xl shadow-indigo-500/10">
+                <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white text-[11px] font-bold uppercase tracking-wider">Most Popular</div>
+                    
